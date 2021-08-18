@@ -1,32 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { getPokemonInfo } from '../../api/api';
+import React from 'react';
+import { PokemonCards } from '../PokemonCards/PokemonCards';
 
 export const PokemonList = ({ pokemons, loadMore }) => {
-  const [pokemon, setPokemon] = useState({});
-  const [pokemon2, setPokemon2] = useState({});
-
-  // useEffect(() => {
-  //   pokemons.map((pokemon) => (
-  //       getPokemonInfo(pokemon.url)
-  //       .then(pokemon => {
-  //         setPokemon(pokemon)
-  //         console.log(pokemon)
-  //       })
-  //   ))
-  // }, [pokemon2])
 
   return(
     <>
       <ul>
         {pokemons.map((pokemon) => (
           <li key={pokemon.url}>
-            <p>{pokemon.name}</p>
-            <p>{pokemon.url}</p>
+            <PokemonCards url={pokemon.url} name={pokemon.name} />
           </li>
         ))}
-        <li>
-          <p>{pokemon.name}</p>
-        </li>
       </ul>
       <button
         type='button'

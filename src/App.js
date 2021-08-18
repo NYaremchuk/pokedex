@@ -6,7 +6,7 @@ import { PokemonList } from './components/PokemonList/';
 export class App extends React.Component {
   state = {
     pokemons: [],
-    count: 12,
+    count: 24,
   }
 
   componentDidMount() {
